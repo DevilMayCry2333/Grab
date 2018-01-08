@@ -27,7 +27,11 @@
                     $flag =1;
                     echo "\n\n";
                     for($i = 0 ; $i < count($out); $i++){
-                        if($i==3 || $i==5 || $i==6 || $i==26 || $i==30 || $i==31){
+                        // 13 is Date
+                        // 3 is Start
+                        //5 is End
+                        //26,30,31 is Has Tickets or not
+                        if($i==3 || $i==5 || $i==6 || $i==13 ||$i==26 || $i==30 || $i==31){
                             $test = $test.$i;
                             $test = $test.'* ';
                             $test = $test.$out[$i];
