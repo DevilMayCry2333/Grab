@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author: jokerl
+ * Website: https://jokerl.com
+ * 
+ */
     function curl_get_https($url){
         $curl = curl_init(); // 启动一个CURL会话
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -13,6 +18,14 @@
         return $tmpInfo;    //返回json对象
     }
     while(1){
+        /**
+         * queryZ 访问接口地址，有可能随时变动
+         * leftTicketDTO.train_date :要查询的日期
+         * leftTicketDTO.from_station: 出发站点
+         * leftTicketDTO.to_station=FYS: 终到站点
+         * purpose_codes 票的类型
+         * 
+         */
         $a=curl_get_https("https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date=2018-02-03&leftTicketDTO.from_station=LKS&leftTicketDTO.to_station=FYS&purpose_codes=ADULT");
         $b = json_decode($a,true);
         $res = $b['data']['result'];
