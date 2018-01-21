@@ -9,11 +9,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- * javaMail的邮件工具类
- * @author wangXgnaw
- *
- */
 public class MailUtil {
 
     /**
@@ -45,7 +40,7 @@ public class MailUtil {
             //通过会话,得到一个邮件,用于发送
             Message msg = new MimeMessage(session);
             //设置发件人
-            msg.setFrom(new InternetAddress("1712363499@qq.com"));
+            msg.setFrom(new InternetAddress("xxxx@xx.com"));
             //设置收件人,to为收件人,cc为抄送,bcc为密送
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
             msg.setRecipients(Message.RecipientType.CC, InternetAddress.parse(to, false));
